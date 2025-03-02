@@ -15,6 +15,7 @@ namespace COMP003A.FinalProject
                 Console.WriteLine("1. Add a Perishable Food.");
                 Console.WriteLine("2. Add a Canned Food.");
                 Console.WriteLine("3. Display Inventory.");
+                Console.WriteLine("4. Describe Item");
                 Console.WriteLine("4. Update Quanity.");
                 Console.WriteLine("5. Delete an Item.");
                 Console.WriteLine("6. Exit");
@@ -44,8 +45,36 @@ namespace COMP003A.FinalProject
                             item.GetDetails();
                         }
                         break;
-                        break;
                     case 4:
+                        bool isRunning = true;
+
+                        while (isRunning)
+                        {
+                            Console.WriteLine("Menu");
+                            Console.WriteLine("1. Describe Perishable items");
+                            Console.WriteLine("2. Describe Canned Items");
+                            Console.WriteLine("3. Exit");
+                            int itemchoice = int.Parse(Console.ReadLine());
+                            switch (itemchoice)
+                            {
+                                case 1:
+                                    Console.WriteLine("Perishable Foods");
+                                    InventoryUtility.DescribeItem("Tomato");
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Canned Foods");
+                                    InventoryUtility.DescribeItem("Soup", 2);
+                                    break;
+                                case 3:
+                                    isRunning = false;
+                                    break;
+                                default:
+                                    Console.WriteLine("Invalid input. Please try again.");
+                                    break;
+                            }
+                        }
+                        break;
+                    case 5:
                         Console.Write("Enter the item you want to update: ");
                         string itemName = Console.ReadLine();
                         int index = -1;
@@ -68,7 +97,7 @@ namespace COMP003A.FinalProject
                             Console.WriteLine("Item not found.");
                         }
                         break;
-                    case 5:
+                    case 6:
                         Console.Write("Enter the item tou want to delete: ");
                         string itemDelete = Console.ReadLine();
                         for (int i = 0; i < items.Count; i++)
@@ -80,7 +109,7 @@ namespace COMP003A.FinalProject
                             }
                         }
                         break;
-                    case 6:
+                    case 7:
                         Console.WriteLine("Goodbye!");
                         return;
                         break;
