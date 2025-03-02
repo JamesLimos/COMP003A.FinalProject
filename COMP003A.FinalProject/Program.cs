@@ -11,16 +11,16 @@ namespace COMP003A.FinalProject
             //Loop for the menu.
             while (true)
             {
-                Console.WriteLine("Welcome to Inventory management system: ");
-                Console.WriteLine("Please choice an option: ");
+                Console.WriteLine("\nWelcome to Inventory management system: ");
+                Console.WriteLine("\nPlease choice an option: \n");
                 Console.WriteLine("1. Add a Perishable Food.");
                 Console.WriteLine("2. Add a Canned Food.");
                 Console.WriteLine("3. Display Inventory.");
                 Console.WriteLine("4. Describe Item");
-                Console.WriteLine("4. Update Quanity.");
-                Console.WriteLine("5. Delete an Item.");
-                Console.WriteLine("6. Exit");
-                Console.WriteLine("Your Choice: ");
+                Console.WriteLine("5. Update Quantity.");
+                Console.WriteLine("6. Delete an Item.");
+                Console.WriteLine("7. Exit\n");
+                Console.Write("Your Choice: ");
                 int choice = int.Parse(Console.ReadLine());
                 
                 // Switch to handle menu choice.
@@ -28,23 +28,23 @@ namespace COMP003A.FinalProject
                 {
                     // case to add perishable foods.
                     case 1:
-                        Console.Write("Enter Name: ");
+                        Console.Write("\nEnter Name: ");
                         string perishableName = Console.ReadLine();
-                        Console.Write("Enter Quantity: ");
+                        Console.Write("\nEnter Quantity: ");
                         int perishableQuantity = int.Parse(Console.ReadLine());
                         items.Add(new Perishable(perishableName, perishableQuantity));
                         break;
                     // case to add canned foods.
                     case 2:
-                        Console.Write("Enter Name: ");
+                        Console.Write("\nEnter Name: ");
                         string cannedName = Console.ReadLine();
-                        Console.Write("Enter Quantity: ");
+                        Console.Write("\nEnter Quantity: ");
                         int cannedQuantity = int.Parse(Console.ReadLine());
                         items.Add(new Canned(cannedName, cannedQuantity));
                         break;
                     // case to view inventory.
                     case 3:
-                        Console.WriteLine("Displaying Inventory: ");
+                        Console.WriteLine("\nDisplaying Inventory: \n");
                         foreach (Item item in items)
                         {
                             item.GetDetails();
@@ -57,10 +57,10 @@ namespace COMP003A.FinalProject
 
                         while (isRunning)
                         {
-                            Console.WriteLine("Menu");
+                            Console.WriteLine("\nMenu\n");
                             Console.WriteLine("1. Describe Perishable items");
                             Console.WriteLine("2. Describe Canned Items");
-                            Console.WriteLine("3. Exit");
+                            Console.WriteLine("3. Exit\n");
                             int itemchoice = int.Parse(Console.ReadLine());
 
                             //switch to handle users choice.
@@ -89,7 +89,7 @@ namespace COMP003A.FinalProject
                         break;
                     // case to update item quantity.
                     case 5:
-                        Console.Write("Enter the item you want to update: ");
+                        Console.Write("\nEnter the item you want to update: ");
                         string itemName = Console.ReadLine();
                         int index = -1;
                         for (int i = 0; i < items.Count; i++)
@@ -101,10 +101,10 @@ namespace COMP003A.FinalProject
                         }
                         if (index != -1)
                         {
-                            Console.Write("Enter new quantity: ");
+                            Console.Write("\nEnter new quantity: ");
                             int itemQuantity = int.Parse(Console.ReadLine());
                             items[index].Quantity = itemQuantity;
-                            Console.WriteLine("Succesfully Updated!");
+                            Console.WriteLine("\nSuccesfully Updated!");
                         }
                         else
                         {
@@ -113,14 +113,14 @@ namespace COMP003A.FinalProject
                         break;
                     //  case to delete item from inventory.
                     case 6:
-                        Console.Write("Enter the item you want to delete: ");
+                        Console.Write("\nEnter the item you want to delete: ");
                         string itemDelete = Console.ReadLine();
                         for (int i = 0; i < items.Count; i++)
                         {
                             if (items[i].Name == itemDelete)
                             {
                                 items.RemoveAt(i);
-                                Console.WriteLine("Deleted Succesfully!");
+                                Console.WriteLine("\nDeleted Succesfully!");
                             }
                         }
                         break;
