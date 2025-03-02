@@ -12,5 +12,9 @@ namespace COMP003A.FinalProject
         {
             Console.WriteLine($"Item Name: {name}");
         }
+        public static void DescribeItem(string name, int quantity)
+        {
+            Console.WriteLine($"Item Name: {name} Item Quantity: {quantity}");
+        }
     }
 }

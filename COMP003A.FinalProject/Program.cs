@@ -44,6 +44,7 @@ namespace COMP003A.FinalProject
                             item.GetDetails();
                         }
                         break;
+                        break;
                     case 4:
                         Console.Write("Enter the item you want to update: ");
                         string itemName = Console.ReadLine();
