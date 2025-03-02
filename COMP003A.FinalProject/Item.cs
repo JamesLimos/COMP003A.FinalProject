@@ -7,11 +7,19 @@ using System.Threading.Tasks;
 
 namespace COMP003A.FinalProject
 {
+    /// <summary>
+    /// This abstract class represents Items in an inventory.
+    /// </summary>
     abstract class Item
     {
+        /// <summary>
+        /// private fields for name and quantity
+        /// </summary>
         private string _name;
         private int _quantity;
-
+        /// <summary>
+        /// gpublic field for the name of the item.
+        /// </summary>
         public string Name
         {
             get {  return _name; }
@@ -25,7 +33,9 @@ namespace COMP003A.FinalProject
             }
 
         }
-
+        /// <summary>
+        /// public field for the quanity of the item.
+        /// </summary>
         public int Quantity
         {
             get { return _quantity; }
@@ -38,7 +48,9 @@ namespace COMP003A.FinalProject
                 _quantity = value;
             }
         }
-
+        /// <summary>
+        /// abstract method to display the details of the item.
+        /// </summary>
         public abstract void GetDetails();
     }
 }

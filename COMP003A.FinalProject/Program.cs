@@ -21,7 +21,7 @@ namespace COMP003A.FinalProject
                 Console.WriteLine("6. Exit");
                 Console.WriteLine("Your Choice: ");
                 int choice = int.Parse(Console.ReadLine());
-
+                
                 switch (choice)
                 {
                     case 1:

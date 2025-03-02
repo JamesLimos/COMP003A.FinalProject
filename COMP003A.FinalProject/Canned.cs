@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace COMP003A.FinalProject
 {
+    /// <summary>
+    /// class representing Canned food items.
+    /// </summary>
     internal class Canned : Item
     {
         public Canned(string name, int quantity) 

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace COMP003A.FinalProject
 {
+    /// <summary>
+    /// Class representing perishable items.
+    /// </summary>
     internal class Perishable : Item
     {
         public Perishable(string name, int quantity)
