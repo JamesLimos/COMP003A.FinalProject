@@ -10,11 +10,11 @@ namespace COMP003A.FinalProject
     {
         public static void DescribeItem(string name)
         {
-            Console.WriteLine($"Item Name: {name}");
+            Console.WriteLine($"Foods that can spoil, decay, or become unsafe to consume if not properly refrigerated or frozen. For example: {name}");
         }
-        public static void DescribeItem(string name, int quantity)
+        public static void DescribeItem(string name, int shelfLife)
         {
-            Console.WriteLine($"Item Name: {name} Item Quantity: {quantity}");
+            Console.WriteLine($"Shelf-stable food products packed in and sealed in a containers. For example: {name} {shelfLife} year shelf life");
         }
     }
 }
