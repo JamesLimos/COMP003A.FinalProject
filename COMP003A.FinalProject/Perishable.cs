@@ -16,7 +16,7 @@ namespace COMP003A.FinalProject
 
         public override void GetDetails()
         {
-            
+            Console.WriteLine($"Name: {Name} Quantity: {Quantity}"); 
         }
     }
 }
