@@ -8,6 +8,7 @@ namespace COMP003A.FinalProject
         {
             List<Item> items = new List<Item>();
 
+            //Loop for the menu.
             while (true)
             {
                 Console.WriteLine("Welcome to Inventory management system: ");
@@ -22,8 +23,10 @@ namespace COMP003A.FinalProject
                 Console.WriteLine("Your Choice: ");
                 int choice = int.Parse(Console.ReadLine());
                 
+                // Switch to handle menu choice.
                 switch (choice)
                 {
+                    // case to add perishable foods.
                     case 1:
                         Console.Write("Enter Name: ");
                         string perishableName = Console.ReadLine();
@@ -31,6 +34,7 @@ namespace COMP003A.FinalProject
                         int perishableQuantity = int.Parse(Console.ReadLine());
                         items.Add(new Perishable(perishableName, perishableQuantity));
                         break;
+                    // case to add canned foods.
                     case 2:
                         Console.Write("Enter Name: ");
                         string cannedName = Console.ReadLine();
@@ -38,6 +42,7 @@ namespace COMP003A.FinalProject
                         int cannedQuantity = int.Parse(Console.ReadLine());
                         items.Add(new Canned(cannedName, cannedQuantity));
                         break;
+                    // case to view inventory.
                     case 3:
                         Console.WriteLine("Displaying Inventory: ");
                         foreach (Item item in items)
@@ -45,7 +50,9 @@ namespace COMP003A.FinalProject
                             item.GetDetails();
                         }
                         break;
+                    // case to give describe perishable and canned foods.
                     case 4:
+                        //Loop for case menu
                         bool isRunning = true;
 
                         while (isRunning)
@@ -55,25 +62,32 @@ namespace COMP003A.FinalProject
                             Console.WriteLine("2. Describe Canned Items");
                             Console.WriteLine("3. Exit");
                             int itemchoice = int.Parse(Console.ReadLine());
+
+                            //switch to handle users choice.
                             switch (itemchoice)
                             {
+                                // describes perishable foods.
                                 case 1:
                                     Console.WriteLine("Perishable Foods");
                                     InventoryUtility.DescribeItem("Tomato");
                                     break;
+                                // describes canned foods
                                 case 2:
                                     Console.WriteLine("Canned Foods");
                                     InventoryUtility.DescribeItem("Soup", 2);
                                     break;
+                                // exits the meni
                                 case 3:
                                     isRunning = false;
                                     break;
+                                // handles wrong inputs
                                 default:
                                     Console.WriteLine("Invalid input. Please try again.");
                                     break;
                             }
                         }
                         break;
+                    // case to update item quantity.
                     case 5:
                         Console.Write("Enter the item you want to update: ");
                         string itemName = Console.ReadLine();
@@ -97,8 +111,9 @@ namespace COMP003A.FinalProject
                             Console.WriteLine("Item not found.");
                         }
                         break;
+                    //  case to delete item from inventory.
                     case 6:
-                        Console.Write("Enter the item tou want to delete: ");
+                        Console.Write("Enter the item you want to delete: ");
                         string itemDelete = Console.ReadLine();
                         for (int i = 0; i < items.Count; i++)
                         {
@@ -109,10 +124,12 @@ namespace COMP003A.FinalProject
                             }
                         }
                         break;
+                    // case to exit program
                     case 7:
                         Console.WriteLine("Goodbye!");
                         return;
                         break;
+                    // handles wrong inputs.
                     default:
                         Console.WriteLine("Invalid input. Please enter a valid number.");
                         break;
